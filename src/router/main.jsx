@@ -1,5 +1,4 @@
 import {lazy} from 'react'
-
 const Index=lazy(()=>import('../pages'))
 const Login=lazy(()=>import('../pages/login'))
 const MedicalInfo=lazy(()=>import('../pages/medicalinfo'))
@@ -11,6 +10,7 @@ const NotFound=lazy(()=>import('../pages/404'))
 // import WestMedical from '../pages/wstmedcial'
 const WestMedical=lazy(()=>import('../pages/wstmedcial'))
 const DemoChart=lazy(()=>import("../pages/chart"))
+const PersonalCenter=lazy(()=>import('../pages/personal'))
 
 const element = [
     {
@@ -39,6 +39,10 @@ const element = [
         path:"/xiyao",
         element:<WestMedical></WestMedical>
       },
+      {
+        path:"/personal",
+        element:<PersonalCenter></PersonalCenter>
+      }
     ]
     },
     {
@@ -48,6 +52,6 @@ const element = [
     {
       path:"/chart",
       element:<DemoChart></DemoChart>
-    }
+    },
   ];
   export default element

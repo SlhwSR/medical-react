@@ -10,6 +10,8 @@ const Kinds =lazy(()=>import('../pages/kind'))
 const NotFound=lazy(()=>import('../pages/404'))
 // import WestMedical from '../pages/wstmedcial'
 const WestMedical=lazy(()=>import('../pages/wstmedcial'))
+const PersonalCenter=lazy(()=>import('../pages/personal'))
+
 const element = [
   {
     path: "/bed",
@@ -34,6 +36,9 @@ const element = [
     path:"/xiyao",
     element:<WestMedical></WestMedical>
   },
-
+  {
+    path:"/personal",
+    element:<PersonalCenter></PersonalCenter>
+  },
 ];
 export default element;
