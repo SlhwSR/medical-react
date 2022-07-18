@@ -8,9 +8,11 @@ import RoseDetail from './cpns/sortDetail';
 import LadderDemo from './cpns/ladyerChart';
 import DemoDualAxes from './cpns/doubleLine'
 import DoubleLineAndSquare from './cpns/doubleLineAndSquare'
+import { useHref, useNavigate } from 'react-router-dom';
 const DemoChart = memo(() => {
   const [data, setData] = useState([]);
-
+  const href=useHref({pathname:"/"})
+  const navigate=useNavigate()
   useEffect(() => {
     asyncFetch();
   }, []);
@@ -48,7 +50,7 @@ const DemoChart = memo(() => {
 
   return (
   <div className="w-full">
-    <Card title="Total static" extra={<Button className="bg-cyan-500">Check More About Bmos</Button>}>
+    <Card title="Total static" extra={<Button onClick={()=>navigate(-1)} className="bg-cyan-500">Check More About Bmos</Button>}>
      <div className="flex flex-wrap flex-1 space-x-1">
      <div className="w-1/2 h-56"><Line {...config}/></div>
      <DemoRose className="w-auto"></DemoRose>

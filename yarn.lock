@@ -1047,6 +1047,24 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
+"@logicflow/core@^1.1.22":
+  version "1.1.22"
+  resolved "https://registry.npmmirror.com/@logicflow/core/-/core-1.1.22.tgz#8661844b66206c3e338d68d24acf7d501e7a0e77"
+  integrity sha512-Dn3YWsF8HXEEDyPiJJzhxTvs6yng8kEEBheKc05sptB0Qz1It1wn7+NoBLSqV2UsnZ8ZKKEYuBvLPbbg8EuCPg==
+  dependencies:
+    "@types/mousetrap" "^1.6.4"
+    mousetrap "^1.6.5"
+    preact "^10.4.8"
+
+"@logicflow/extension@^1.1.22":
+  version "1.1.22"
+  resolved "https://registry.npmmirror.com/@logicflow/extension/-/extension-1.1.22.tgz#0d2ebfebb0321c6606baf74836eee29b773dcb12"
+  integrity sha512-ObvYUjF/7IybQqwoQQx+FT/nCrDWozMvCA6tZwZJJyGe7hN21kxn4aNQkpYR6YwlHZZPqsl1gKcjZ57rO+wHpw==
+  dependencies:
+    "@logicflow/core" "^1.1.22"
+    ids "^1.0.0"
+    preact "^10.4.8"
+
 "@mapbox/geojson-area@0.2.2":
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/@mapbox/geojson-area/-/geojson-area-0.2.2.tgz#18d7814aa36bf23fbbcc379f8e26a22927debf10"
@@ -1266,6 +1284,11 @@
   integrity sha512-qKcbA5ZKhGwqU5/ti8zC0nbqkxqBYi9EUo4bIjB7MK8ve+mBhbJBcYRjTYWYD7IhHCQfvPGVSnVlesH6yZ2Fiw==
   dependencies:
     "@types/geojson" "*"
+
+"@types/mousetrap@^1.6.4":
+  version "1.6.9"
+  resolved "https://registry.npmmirror.com/@types/mousetrap/-/mousetrap-1.6.9.tgz#f1ef9adbd1eac3466f21b6988b1c82c633a45340"
+  integrity sha512-HUAiN65VsRXyFCTicolwb5+I7FM6f72zjMWr+ajGk+YTvzBgXqa2A5U7d+rtsouAkunJ5U4Sb5lNJjo9w+nmXg==
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -2521,6 +2544,11 @@ iconv-lite@0.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+ids@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/ids/-/ids-1.0.0.tgz#df67f2d37b81d7c2effc87e03d17ebff95a58c05"
+  integrity sha512-Zvtq1xUto4LttpstyOlFum8lKx+i1OmRfg+6A9drFS9iSZsDPMHG4Sof/qwNR4kCU7jBeWFPrY2ocHxiz7cCRw==
+
 ieee754@^1.1.12:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
@@ -3230,6 +3258,11 @@ potpack@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/potpack/-/potpack-1.0.2.tgz#23b99e64eb74f5741ffe7656b5b5c4ddce8dfc14"
   integrity sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==
+
+preact@^10.4.8:
+  version "10.10.0"
+  resolved "https://registry.npmmirror.com/preact/-/preact-10.10.0.tgz#7434750a24b59dae1957d95dc0aa47a4a8e9a180"
+  integrity sha512-fszkg1iJJjq68I4lI8ZsmBiaoQiQHbxf1lNq+72EmC/mZOsFF5zn3k1yv9QGoFgIXzgsdSKtYymLJsrJPoamjQ==
 
 probe.gl@^3.1.1:
   version "3.5.0"
