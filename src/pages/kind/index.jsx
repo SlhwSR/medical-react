@@ -27,7 +27,7 @@ const Kinds = memo(() => {
 
   const handleOk = () => {
     // console.log({key:number,name:username,age,address,tag:checkList});
-    dispatch(add({key:number,name:username,age,address,tag:checkList}))
+    dispatch(add({key:number,name:username,age,address,tags:checkList}))
     setIsModalVisible(false);
   };
 
