@@ -36,19 +36,12 @@ const Kinds = memo(() => {
   const handleOk = () => {
     // console.log({key:number,name:username,age,address,tag:checkList});
     dispatch(add({key:number,name:username,age,address,tags:checkList}))
-    setUsername('')
-    setAge(0)
-    setAddress("")
-    setCheckList([])
+  
     setIsModalVisible(false);
   };
 
   const handleCancel = () => {
     setIsModalVisible(false);
-    setUsername('')
-    setAge(0)
-    setAddress("")
-    setCheckList([])
   };
   const handleOk1 = () => {
     // console.log({key:number,name:username,age,address,tag:checkList});
