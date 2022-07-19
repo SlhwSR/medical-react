@@ -14,13 +14,13 @@ const PersonalCenter=lazy(()=>import('../pages/personal'))
 
 const element = [
   {
-    path: "/bed",
+    path: "/",
     element: <BedNo></BedNo>,
     children: [{
-      path: '/bed/kinds',
+      path: '/kinds',
       element:<Kinds></Kinds>
     },{
-      path: '/bed/staticount',
+      path: '/staticount',
       element:<MedicalInfo></MedicalInfo>
     }]
   },

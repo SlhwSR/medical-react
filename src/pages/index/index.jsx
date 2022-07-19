@@ -15,7 +15,7 @@ const Index = memo((props) => {
     const [count, setCount] = useState(0)
  const navigator =useNavigate()
     const navheaer=[{
-      key:"bed/kinds",
+      key:"kinds",
       label:"首页",
     },{
       key:"chart",

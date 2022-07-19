@@ -11,19 +11,18 @@ const NotFound=lazy(()=>import('../pages/404'))
 const WestMedical=lazy(()=>import('../pages/wstmedcial'))
 const DemoChart=lazy(()=>import("../pages/chart"))
 const PersonalCenter=lazy(()=>import('../pages/personal'))
-
 const element = [
     {
       path: "/",
       element: <Index></Index>,
       children:[ {
-        path: "/bed",
+        path: "/",
         element: <BedNo></BedNo>,
         children: [{
-          path: '/bed/kinds',
+          path: '/kinds',
           element:<Kinds></Kinds>
         },{
-          path: '/bed/staticount',
+          path: '/staticount',
           element:<MedicalInfo></MedicalInfo>
         }]
       },

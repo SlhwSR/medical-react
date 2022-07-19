@@ -2,11 +2,11 @@ import {createElement} from 'react'
 import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,MediumSquareFilled } from '@ant-design/icons';
 
 export const mapList=[{
-    key:'bed',
+    key:'/',
     icon:createElement(EyeOutlined),
     label:"计划",
     children:[{
-      key:'bed/kinds',
+      key:'kinds',
     icon:createElement(UserOutlined),
     label:"临床病例",
     },{
