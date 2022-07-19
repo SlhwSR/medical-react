@@ -12,23 +12,6 @@ const Login = memo(() => {
 	const [form] = Form.useForm();
 	const [loading, setLoading] = useState(false);
 	const [register,setregister]=useState(false)
-    const onFinish = async ({username,password}) => {
-		try {
-			setLoading(true);
-			loginForm.password = md5(loginForm.password);
-			const { data } = await loginApi(loginForm);
-			props.setToken(data?.access_token);
-			props.setTabsList([]);
-			message.success("登录成功！");
-			navigate(HOME_URL);
-		} finally {
-			setLoading(false);
-		}
-	};
-
-	const onFinishFailed = (errorInfo) => {
-		console.log("Failed:", errorInfo);
-	};
   return (
     <LoginWrapper>
 			<div className="login-box">
