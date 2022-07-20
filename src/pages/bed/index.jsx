@@ -1,7 +1,13 @@
-import React, { memo, useState } from 'react'
-import { NavLink, Outlet } from 'react-router-dom'
+import React, { memo, useEffect, useState } from 'react'
+import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 
 const BedNo = memo(() => {
+  const navigate=useNavigate()
+  const location=useLocation()
+  useEffect(()=>{
+    navigate(`/kinds`,{state:{age:"111",his:"44"},replace:true},)
+    console.log(location);
+  },[])
   const [name,setname]=useState("111")
   return (
     <div>
