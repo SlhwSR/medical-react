@@ -1,31 +1,38 @@
-import React, { useState, useEffect, lazy } from 'react';
+import React, { useState, useEffect, lazy, useReducer } from 'react';
 import { Rose } from '@ant-design/plots';
 
 const DemoRose = () => {
+  useEffect(()=>{
+    setInterval(()=>{
+      forceuUpdate()  
+    },2000)
+   return ()=>clearInterval()
+  },[])
+  const [ignore,forceuUpdate]=  useReducer((x)=>x+1,0)
   const data = [
     {
       type: '分类一',
-      value: 27,
+      value: Math.floor(Math.random()*1000),
     },
     {
       type: '分类二',
-      value: 25,
+      value: Math.floor(Math.random()*1000),
     },
     {
       type: '分类三',
-      value: 18,
+      value: Math.floor(Math.random()*1000),
     },
     {
       type: '分类四',
-      value: 15,
+      value: Math.floor(Math.random()*1000),
     },
     {
       type: '分类五',
-      value: 10,
+      value: Math.floor(Math.random()*1000),
     },
     {
       type: '其他',
-      value: 5,
+      value: Math.floor(Math.random()*1000),
     },
   ];
   const config = {
@@ -35,7 +42,7 @@ const DemoRose = () => {
     seriesField: 'type',
     radius: 0.9,
     legend: {
-      position: 'bottom',
+      position: 'right',
     },
   };
   return <Rose {...config} />;
