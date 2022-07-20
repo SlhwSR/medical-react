@@ -39,7 +39,7 @@ const Kinds = memo(() => {
   
     setIsModalVisible(false);
   };
-
+ 
   const handleCancel = () => {
     setIsModalVisible(false);
   };

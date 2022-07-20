@@ -37,12 +37,6 @@ import {
          state.goodlist.splice(action.payload-1,1)
         },
         updateOne:(state,action)=>{
-            // if(action.payload.key===1){
-            //     state.goodlist[action.payload.key]=action.payload
-            //    return;
-            // }
-            //  state.goodlist.splice(action.payload.key-1,1)
-            //delete goodlist[action.payload.key]
              state.goodlist[action.payload.key-1]=action.payload
         }
     }

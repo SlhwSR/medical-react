@@ -12,7 +12,6 @@ const { Header, Content, Sider } = Layout;
 // const Demon=()=>(<div className="w-36 text-center">111</div>)
 const Index = memo((props) => {
     const [skin,setskin]=useState(true)
-    const [count, setCount] = useState(0)
  const navigator =useNavigate()
     const navheaer=[{
       key:"kinds",
