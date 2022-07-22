@@ -8,7 +8,7 @@ const BedNo = memo(() => {
     navigate(`/kinds`,{state:{age:"111",his:"44"},replace:true},)
     console.log(location);
   },[])
-  const [name,setname]=useState("111")
+  const [name,setname]=useState("<Redux toolkit>")
   return (
     <div>
        <NavLink to={'/kinds'} className="font-thin">Static Mock</NavLink>

@@ -128,15 +128,15 @@ const Kinds = memo(() => {
       key: 'action',
       render: (_, record) => (
         <Space size="middle">
-          <Button onClick={()=>editorRow(record)}>Editor {record.name}</Button>
+          <Button onClick={()=>editorRow(record)} type="primary">Editor {record.name}</Button>
           <Button type="danger" className="bg-red-500" onClick={()=>toDelete(record.key)}>Delete</Button>
         </Space>
       ),
     },
   ];
   return (
-    <div>Kinds Page,{name}
-    <Button onClick={()=>showModal()}>添加一条</Button>
+    <div>Just A redux demo{name}
+    <Button onClick={()=>showModal()} className="scroll-ml-32 scroll-m-80" style={{marginLeft:"1300px"}}>添加一条</Button>
     <TableWrapper>
       <Table dataSource={goodlist} columns={columns}>
       </Table>
