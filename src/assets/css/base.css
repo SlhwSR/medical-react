@@ -64,14 +64,7 @@ body, textarea, select, input, button {
   width: 980px;
   margin: 0 auto;
 } 
-.ant-message .ant-message-notice-content {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 60px;
-  background-color: rgba(0, 0, 0, .5);
-  color: #fff;
-}
+
 
 
 span:hover.link {
