@@ -7,25 +7,13 @@
  import { NavLink, useHref,useNavigate,useRoutes } from 'react-router-dom';
  import routes from '../../router'
  import Loading from '@components/loading';
-import { mapList } from '../../common/maplist';
+import { mapList,navheaer } from '../../common/maplist';
 const { Header, Content, Sider } = Layout;
 // const Demon=()=>(<div className="w-36 text-center">111</div>)
 const Index = memo((props) => {
     const [skin,setskin]=useState(true)
  const navigator =useNavigate()
-    const navheaer=[{
-      key:"kinds",
-      label:"首页",
-    },{
-      key:"chart",
-      label:"图表",
-    },{
-      key:"personal",
-      label:"个人中心",
-    },{
-        key:'login',
-        label:'退出'
-    }]
+ 
     const [bread,setbread]=useState('首页')
    const Controlbread=(item,key,value)=>{
     console.log(item+'---'+key+'-----'+value);

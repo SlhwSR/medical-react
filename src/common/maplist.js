@@ -31,3 +31,16 @@ export const mapList=[{
     label:'中药库'
   }
  ]
+ export const navheaer=[{
+  key:"kinds",
+  label:"首页",
+},{
+  key:"chart",
+  label:"图表",
+},{
+  key:"personal",
+  label:"个人中心",
+},{
+    key:'login',
+    label:'退出'
+}]
