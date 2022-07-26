@@ -7,7 +7,7 @@
  import { NavLink, useHref,useNavigate,useRoutes } from 'react-router-dom';
  import routes from '../../router'
  import Loading from '@components/loading';
-import { mapList,navheaer } from '../../common/maplist';
+import { ColumnList,navheaer } from '../../common/maplist';
 const { Header, Content, Sider } = Layout;
 // const Demon=()=>(<div className="w-36 text-center">111</div>)
 const Index = memo((props) => {
@@ -42,7 +42,7 @@ const Index = memo((props) => {
         borderRight: 0,
       }}
       onClick={({item,key,keypath})=>Controlbread(item,key,keypath)}
-      items={mapList}
+      items={ColumnList}
     />
   </Sider>
   <Layout

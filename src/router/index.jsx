@@ -11,7 +11,7 @@ const NotFound=lazy(()=>import('../pages/404'))
 // import WestMedical from '../pages/wstmedcial'
 const WestMedical=lazy(()=>import('../pages/wstmedcial'))
 const PersonalCenter=lazy(()=>import('../pages/personal'))
-
+const LogicFlows=lazy(()=>import("../pages/logicflow"))
 const element = [
   {
     path: "/",
@@ -36,9 +36,13 @@ const element = [
     path:"/xiyao",
     element:<WestMedical></WestMedical>
   },
-  {
+  { 
     path:"/personal",
     element:<PersonalCenter></PersonalCenter>
+  },
+  {
+    path:"/logicflow",
+    element:<LogicFlows></LogicFlows>
   },
 ];
 export default element;

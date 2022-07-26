@@ -11,6 +11,7 @@ const NotFound=lazy(()=>import('../pages/404'))
 const WestMedical=lazy(()=>import('../pages/wstmedcial'))
 const DemoChart=lazy(()=>import("../pages/chart"))
 const PersonalCenter=lazy(()=>import('../pages/personal'))
+const LogicFlows=lazy(()=>import('../pages/logicflow'))
 const element = [
     {
       path: "/",
@@ -41,7 +42,11 @@ const element = [
       {
         path:"/personal",
         element:<PersonalCenter></PersonalCenter>
-      }
+      },
+      // {
+      //   path:"/logicflow",
+      //   element:<LogicFlows></LogicFlows>
+      // },
     ]
     },
     {
@@ -51,6 +56,10 @@ const element = [
     {
       path:"/chart",
       element:<DemoChart></DemoChart>
+    },
+    {
+      path:"/logicflow",
+      element:<LogicFlows></LogicFlows>
     },
   ];
   export default element

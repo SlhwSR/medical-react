@@ -1,7 +1,7 @@
 import {createElement} from 'react'
-import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,MediumSquareFilled } from '@ant-design/icons';
+import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,CodepenCircleFilled } from '@ant-design/icons';
 
-export const mapList=[{
+export const ColumnList=[{
     key:'/',
     icon:createElement(EyeOutlined),
     label:"计划",
@@ -17,7 +17,6 @@ export const mapList=[{
       key:"xiyao",
       icon:createElement(ApiOutlined),
       label:"西药数据",
-   
     }]
     }]
   },{
@@ -29,6 +28,11 @@ export const mapList=[{
     key:'medicalinfo',
     icon:createElement(BorderBottomOutlined),
     label:'中药库'
+  },
+  {
+    key:"logicflow",
+    icon:createElement(CodepenCircleFilled),
+    label:"审批流程"
   }
  ]
  export const navheaer=[{
