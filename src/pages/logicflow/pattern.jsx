@@ -55,7 +55,7 @@ export default function BpmnPattern(props) {
       <div className="pattern-condition" onMouseDown={() => addGateWay()}></div>
       <div>条件判断</div>
       <div className="pattern-end" onMouseDown={() => addEndNode()}></div>
-      <div>结束</div>
+      <div>结束</div> 
     </div>
   );
 }

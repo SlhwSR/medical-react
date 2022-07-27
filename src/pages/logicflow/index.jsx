@@ -26,12 +26,10 @@ const config = {
     enabled: true,
   },
   snapline: true,
-  width:1380,
-  height:800
+  width:1500,
+  height:800,
+  autoExpand:true
 }
-
-
-
 export default class BpmnExample extends Component{
   constructor(props) {
     super(props);

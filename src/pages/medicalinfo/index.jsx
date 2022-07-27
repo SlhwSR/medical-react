@@ -4,15 +4,16 @@ import Draggable from 'react-draggable'
 const MedicalInfo = memo(() => {
   const [disable,setDisable]=useState(false)
   const handleDrag=(e)=>{
-    if(e.screenX>=1400||e.screenX<=445||e.screenY<=384||e.screenY>=776){
-      setDisable(true)
-  }      
+  //   if(e.screenX>=1400||e.screenX<=445||e.screenY<=384||e.screenY>=776){
+  //     setDisable(true)
+  // }      
+  console.log(e);
   }
   const stopTodraw=(e)=>{
     console.log(e);  
   }
   return (
-    <div className="w-full h-full bg-slate-600">
+    <div className="w-full h-full">
       <Draggable
        scale={1}
        onDrag={(e)=>handleDrag(e)}
