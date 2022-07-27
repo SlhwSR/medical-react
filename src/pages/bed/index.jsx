@@ -12,7 +12,7 @@ const BedNo = memo(() => {
   return (
     <div>
        <NavLink to={'/kinds'} className="font-thin">Static Mock</NavLink>
-       <NavLink to={'/staticount'} className="ml-5 font-thin">to Static chart</NavLink>
+       <NavLink to={'/staticount'} className="ml-5 font-thin">to Video Center</NavLink>
        <Outlet context={[name,setname]}></Outlet>
      </div>
   )

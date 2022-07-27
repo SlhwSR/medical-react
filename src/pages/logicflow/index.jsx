@@ -19,20 +19,23 @@ const config = {
   stopZoomGraph: true,
   metaKeyMultipleSelected: true,
   grid: {
-    size: 10,
+    size: 16,
     type: 'dot',
   },
   keyboard: {
     enabled: true,
   },
   snapline: true,
+  width:1380,
+  height:800
 }
+
 
 
 export default class BpmnExample extends Component{
   constructor(props) {
-    this.lf=null
     super(props);
+     this.lf=null
     this.state = {
       rendered: true,
     };
@@ -48,15 +51,15 @@ export default class BpmnExample extends Component{
       ...config,
       container: document.querySelector('#graph')
     });
-    lf.render()
     this.lf = lf;
+    lf.render()
     this.setState({
       rendered: true,
     });
   }
   render() {
     const { rendered } = this.state;
-    let tools;
+    var tools;
     if (rendered) {
       tools = (
         <div>
@@ -66,12 +69,12 @@ export default class BpmnExample extends Component{
       );
     }
     return (
-      <>
+      <React.StrictMode>
         <div className="bpmn-example-container">
           <div id="graph" className="viewport"></div>
           {tools}
         </div>
-      </>
+      </React.StrictMode>
     )
   }
 }
