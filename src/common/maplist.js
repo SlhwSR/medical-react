@@ -1,5 +1,5 @@
 import {createElement} from 'react'
-import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,CodepenCircleFilled } from '@ant-design/icons';
+import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,CodepenCircleFilled, EditOutlined } from '@ant-design/icons';
 
 export const ColumnList=[{
     key:'/',
@@ -33,6 +33,10 @@ export const ColumnList=[{
     key:"logicflow",
     icon:createElement(CodepenCircleFilled),
     label:"审批流程"
+  },{
+    key:"editor",
+    icon:createElement(EditOutlined),
+    label:"编辑器"
   }
  ]
  export const navheaer=[{

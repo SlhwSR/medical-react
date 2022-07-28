@@ -13,7 +13,7 @@ import BpmnIo from './io';
 import './index.css';
 import 'antd/lib/button/style/index.css';
 import '@logicflow/extension/lib/style/index.css';
-
+import {toLogicflowData} from './cpns/adpterForTurbo'
 const config = {
   stopScrollGraph: true,
   stopZoomGraph: true,
@@ -28,12 +28,15 @@ const config = {
   snapline: true,
   width:1500,
   height:800,
-  autoExpand:true
+  autoExpand:true,
+  background: {
+    color: "#f7f9ff"
+  },
 }
 export default class BpmnExample extends Component{
   constructor(props) {
     super(props);
-     this.lf=null
+     this.lf
     this.state = {
       rendered: true,
     };
@@ -50,10 +53,22 @@ export default class BpmnExample extends Component{
       container: document.querySelector('#graph')
     });
     this.lf = lf;
-    lf.render()
+    lf.setDefaultEdgeType("bpmn:sequenceFlow")
+    //lf.render()
+    lf.setTheme({
+      outline: {
+        fill: 'transparent',
+        stroke: '#949494',
+        strokeDasharray: '3,3',
+        hover: {
+          stroke: '#949494',
+        },
+      },
+    })
     this.setState({
       rendered: true,
     });
+    lf.render()
   }
   render() {
     const { rendered } = this.state;

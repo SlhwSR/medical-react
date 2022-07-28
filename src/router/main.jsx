@@ -12,6 +12,7 @@ const WestMedical=lazy(()=>import('../pages/wstmedcial'))
 const DemoChart=lazy(()=>import("../pages/chart"))
 const PersonalCenter=lazy(()=>import('../pages/personal'))
 const LogicFlows=lazy(()=>import('../pages/logicflow'))
+const EditorPgae=lazy(()=>import('@/pages/editorpage'))
 const element = [
     {
       path: "/",
@@ -43,6 +44,10 @@ const element = [
         path:"/personal",
         element:<PersonalCenter></PersonalCenter>
       },
+      {
+        path:"/editor",
+        element:<EditorPgae></EditorPgae>
+      }
       // {
       //   path:"/logicflow",
       //   element:<LogicFlows></LogicFlows>

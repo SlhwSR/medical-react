@@ -1,4 +1,5 @@
 import {lazy} from 'react'
+import EditorPage from '../pages/editorpage'
   import Login from '../pages/login'
 // import MedicalInfo from '../pages/medicalinfo'
 // import BedNo from '../pages/bed'
@@ -44,5 +45,9 @@ const element = [
     path:"/logicflow",
     element:<LogicFlows></LogicFlows>
   },
+  {
+    path:"/editor",
+    element:<EditorPage></EditorPage>
+  }
 ];
 export default element;

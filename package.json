@@ -16,6 +16,8 @@
     "@logicflow/extension": "^1.1.22",
     "@reduxjs/toolkit": "^1.8.3",
     "@vitejs/plugin-basic-ssl": "^0.1.1",
+    "@wangeditor/editor": "^5.1.14",
+    "@wangeditor/editor-for-react": "^1.0.4",
     "antd": "^4.21.5",
     "axios": "^0.27.2",
     "moment": "^2.29.4",
