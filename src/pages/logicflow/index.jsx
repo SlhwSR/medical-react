@@ -36,7 +36,7 @@ const config = {
   },
 }
 export default class BpmnExample extends Component{
-  constructor(props) {
+  constructor(props) {    
     super(props);
      this.lf
     this.state = {
@@ -52,11 +52,12 @@ export default class BpmnExample extends Component{
     LogicFlow.use(SelectionSelect);
     const lf = new LogicFlow({
       ...config,
-      container: document.querySelector('#graph')
+      container: document.querySelector('#graph'),
     });
     this.lf = lf;
     lf.setDefaultEdgeType("bpmn:sequenceFlow")
     //lf.render()
+    
     lf.setTheme({
       outline: {
         fill: 'transparent',
@@ -66,16 +67,17 @@ export default class BpmnExample extends Component{
           stroke: '#949494',
         },
       },
-      edgeText: {
-        textWidth: 100,
-        overflowMode: "autoWrap",
-        fontSize: 12,
-        background: {
-          fill: "#FFFFFF"
-        }
-      } 
+      // edgeText: {
+      //   textWidth: 100,
+      //   overflowMode: "autoWrap",
+      //   fontSize: 12,
+      //   background: {
+      //     fill: "#FFFFFF"
+      //   }
+      // } 
     })
     lf.register(customEdge)
+    
     lf.setDefaultEdgeType("custom-edge")
     this.setState({
       rendered: true,

@@ -49,9 +49,9 @@ export default function BpmnPattern(props) {
       <div className="pattern-start" onMouseDown={() => addStartNode()} />
       <div>开始</div>
       <div className="pattern-user" onMouseDown={() => addUserTask()}></div>
-      <div>用户任务</div>
+      <div>执行人</div>
       <div className="pattern-user" onMouseDown={() => addServiceTask()}></div>
-      <div>系统任务</div>
+      <div>执行事件 </div>
       <div className="pattern-condition" onMouseDown={() => addGateWay()}></div>
       <div>条件判断</div>
       <div className="pattern-end" onMouseDown={() => addEndNode()}></div>

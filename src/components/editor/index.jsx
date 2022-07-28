@@ -23,7 +23,7 @@ const Leditor = memo(() => {
                 { text: 'XML', value: 'xml' },
         ]
     }
- }
+ } 
  useEffect(()=>{
    return ()=>{
      if(editor==null) return

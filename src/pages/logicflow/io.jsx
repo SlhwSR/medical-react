@@ -2,7 +2,7 @@ import React from 'react';
 import LogicFlow from '@logicflow/core';
 
 import downloadImg from './cpns/img/download.png'
-import photo from './cpns/img/upload.png'
+import photo from './cpns/img/img.png'
 import uploadImg from './cpns/img/upload.png'
 
 function download(filename, text) {
