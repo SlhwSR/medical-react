@@ -12,8 +12,10 @@ import BpmnPattern from './pattern';
 import BpmnIo from './io';
 import './index.css';
 import 'antd/lib/button/style/index.css';
-import '@logicflow/extension/lib/style/index.css';
+import "@logicflow/extension/lib/style/index.css";
+import "@logicflow/core/dist/style/index.css";
 import {toLogicflowData} from './cpns/adpterForTurbo'
+import customEdge from './customEdge';
 const config = {
   stopScrollGraph: true,
   stopZoomGraph: true,
@@ -64,7 +66,17 @@ export default class BpmnExample extends Component{
           stroke: '#949494',
         },
       },
+      edgeText: {
+        textWidth: 100,
+        overflowMode: "autoWrap",
+        fontSize: 12,
+        background: {
+          fill: "#FFFFFF"
+        }
+      } 
     })
+    lf.register(customEdge)
+    lf.setDefaultEdgeType("custom-edge")
     this.setState({
       rendered: true,
     });

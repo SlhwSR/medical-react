@@ -16,7 +16,12 @@ const Leditor = memo(() => {
         uploadImage:{
             server:"/api/upload-image",
             fieldName:"custom-field-name"
-        }
+        },
+        codeSelectLang:[
+                { text: 'CSS', value: 'css' },
+                { text: 'HTML', value: 'html' },
+                { text: 'XML', value: 'xml' },
+        ]
     }
  }
  useEffect(()=>{

@@ -127,7 +127,7 @@ const Kinds = memo(() => {
       title: 'Action',
       key: 'action',
       render: (_, record) => (
-        <Space size="middle">
+        <Space size=" middle">
           <Button onClick={()=>editorRow(record)} type="primary">Editor {record.name}</Button>
           <Button type="danger" className="bg-red-500" onClick={()=>toDelete(record.key)}>Delete</Button>
         </Space>

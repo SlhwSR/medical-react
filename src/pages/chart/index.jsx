@@ -25,7 +25,7 @@ const DemoChart = memo(() => {
         console.log('fetch data failed', error);
       });
   };
-  const config = {
+  const config = {  
     data,
     xField: 'year',
     yField: 'gdp',
