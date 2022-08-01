@@ -1,5 +1,5 @@
 import {createElement} from 'react'
-import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,CodepenCircleFilled, EditOutlined } from '@ant-design/icons';
+import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,CodepenCircleFilled, EditOutlined, FolderViewOutlined } from '@ant-design/icons';
 
 export const ColumnList=[{
     key:'/',
@@ -37,6 +37,11 @@ export const ColumnList=[{
     key:"editor",
     icon:createElement(EditOutlined),
     label:"编辑器"
+  },
+  {
+    key:"flow",
+    icon:createElement(FolderViewOutlined),
+    label:"模型图"
   }
  ]
  export const navheaer=[{

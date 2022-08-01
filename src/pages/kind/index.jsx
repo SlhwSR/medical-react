@@ -19,7 +19,6 @@ const Kinds = memo(() => {
   const [age,setAge]=useState(18)
   const  [address,setAddress]=useState('')
   const [modalVisible, setModalVisible] = useState(false);
-
   const [currentNumber,setCurrentNumber]=useState(1)
   const [currentUsername,setCurrentUsername]=useState("")
   const [currentCheckList,setCurrentCheckList]=useState([])

@@ -13,11 +13,12 @@ const DemoChart=lazy(()=>import("../pages/chart"))
 const PersonalCenter=lazy(()=>import('../pages/personal'))
 const LogicFlows=lazy(()=>import('../pages/logicflow'))
 const EditorPgae=lazy(()=>import('@/pages/editorpage'))
+const Flow=lazy(()=>import("@/components/flow"))
 const element = [
     {
       path: "/",
       element: <Index></Index>,
-      children:[ {
+      children:[{
         path: "/",
         element: <BedNo></BedNo>,
         children: [{
@@ -66,5 +67,13 @@ const element = [
       path:"/logicflow",
       element:<LogicFlows></LogicFlows>
     },
+    {
+      path:"/flow",
+      element:<Flow></Flow>
+    },
+    {
+      path:"*",
+      element:<NotFound></NotFound>
+    }
   ];
   export default element
