@@ -1,5 +1,6 @@
 import {createElement} from 'react'
 import { ApiOutlined, BookOutlined, BorderBottomOutlined, EyeOutlined, LaptopOutlined, UserOutlined,CodepenCircleFilled, EditOutlined, FolderViewOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
 
 export const ColumnList=[{
     key:'/',
@@ -56,4 +57,9 @@ export const ColumnList=[{
 },{
     key:'login',
     label:'退出'
-}]
+},
+{
+  key:"userinfo",
+  label:<span  style={{position:"absolute",left:"1450px"}}><Avatar>username</Avatar></span>
+}
+]
