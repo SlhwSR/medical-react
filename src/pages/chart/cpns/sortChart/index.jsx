@@ -44,6 +44,22 @@ const DemoRose = () => {
     legend: {
       position: 'right',
     },
+    interactions: [
+      {
+        type: 'element-single-selected',
+      },
+      {
+        type: 'element-active',
+      },
+    ],
+    state: {
+      active: {
+        style: {
+          lineWidth: 0,
+          fillOpacity: 0.65,
+        },
+      },
+    },
   };
   return <Rose {...config} />;
 };

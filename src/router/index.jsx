@@ -50,6 +50,10 @@ const element = [
   {
     path:"/editor",
     element:<EditorPage></EditorPage>
-  }
+  },
+  {
+    path:"/chart",
+    element:<DemoChart></DemoChart>
+  },
 ];
 export default element;
