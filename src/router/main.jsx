@@ -48,11 +48,11 @@ const element = [
       {
         path:"/editor",
         element:<EditorPgae></EditorPgae>
-      }
-      // {
-      //   path:"/logicflow",
-      //   element:<LogicFlows></LogicFlows>
-      // },
+      },
+      {
+        path:"/logicflow",
+        element:<LogicFlows></LogicFlows>
+      },
     ]
     },
     {

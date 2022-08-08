@@ -13,6 +13,7 @@ const NotFound=lazy(()=>import('../pages/404'))
 const WestMedical=lazy(()=>import('../pages/wstmedcial'))
 const PersonalCenter=lazy(()=>import('../pages/personal'))
 const LogicFlows=lazy(()=>import("../pages/logicflow"))
+const DemoChart=lazy(()=>import("../pages/chart"))
 const element = [
   {
     path: "/",
@@ -23,7 +24,8 @@ const element = [
     },{
       path: '/staticount',
       element:<MedicalInfo></MedicalInfo>
-    }]
+    },
+  ]
   },
   {
     path: "/medicalinfo",

@@ -31,19 +31,20 @@ const Index = memo((props) => {
   <QqOutlined></QqOutlined>
  </Header>
 <Layout>
-  <Sider width={200} className="site-layout-background">
+  <Sider width={200} style={{overflow: 'hidden'}} className="site-layout-background">
     <Menu
       mode="inline"
       theme={skin?"dark":"light"}
       defaultSelectedKeys={['plan']}
       defaultOpenKeys={['bed']}
       style={{
-        height: '100%',
+        height: '100vh',
         borderRight: 0,
       }}
       onClick={({item,key,keypath})=>Controlbread(item,key,keypath)}
       items={ColumnList}
-    />
+    >
+    </Menu>
   </Sider>
   <Layout
     style={{

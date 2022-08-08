@@ -60,6 +60,6 @@ export const ColumnList=[{
 },
 {
   key:"userinfo",
-  label:<span  style={{position:"absolute",left:"1450px"}}><Avatar>username</Avatar></span>
+  label:<span style={{position:"absolute",left:"1450px"}} className=" hover:bg-transparent"><Avatar>username</Avatar></span>
 }
 ]
