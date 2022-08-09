@@ -123,7 +123,6 @@ export default class BpmnExample extends Component {
     this.lf = lf;
     lf.setDefaultEdgeType("bpmn:sequenceFlow");
     //lf.render()
-    lf.extension.miniMap(0,0)
     lf.setTheme({
       outline: {
         fill: "transparent",
