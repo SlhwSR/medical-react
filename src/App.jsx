@@ -10,7 +10,7 @@ export default function App() {
     <div className="App">
      {/* {islogin?<Index islogin={(val)=>{setislogin(val)}}></Index>:<Login></Login>} */}
   <Suspense fallback={<Loading></Loading>}>
-   {useRoutes(routes)}
+     {useRoutes(routes)}
   </Suspense>
   </div>
   )

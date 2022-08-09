@@ -1,6 +1,10 @@
+import styled from "styled-components";
+
+export const LogicFlowWrapper=styled.div`
 .bpmn-example-container {
   position: relative;
   overflow: hidden;
+  left:300px;
 }
 .pattern {
   position: absolute;
@@ -84,4 +88,9 @@
 .upload::-webkit-file-upload-button{
   cursor: pointer;
 }
-  
+.rightInfo{
+    position: absolute;
+    right:10px;
+    top: 30px;
+}
+`
