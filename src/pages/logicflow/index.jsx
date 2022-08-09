@@ -7,6 +7,8 @@ import {
   Control,
   Menu,
   SelectionSelect,
+  BpmnAdapter,
+  MiniMap,
 } from "@logicflow/extension";
 import BpmnPattern from "./pattern";
 import BpmnIo from "./io";
@@ -16,7 +18,7 @@ import "@logicflow/core/dist/style/index.css";
 import { toLogicflowData } from "./cpns/adpterForTurbo";
 import customEdge from "./customEdge";
 import { LogicFlowWrapper } from "./style";
-import { TreeSelect,Card, Input } from "antd";
+import { TreeSelect, Card, Input } from "antd";
 const { TreeNode } = TreeSelect;
 const config = {
   stopScrollGraph: true,
@@ -57,12 +59,12 @@ export default class BpmnExample extends Component {
             {
               title: "流程节点二子节点",
               value: "0-0-2",
-              children:[
+              children: [
                 {
-                  title:"血浆站",
-                  value:"cwd"
-                }
-              ]
+                  title: "血浆站",
+                  value: "cwd",
+                },
+              ],
             },
             {
               title: "流程节点三子节点",
@@ -77,7 +79,7 @@ export default class BpmnExample extends Component {
         {
           title: "Node2节点",
           value: "0-1",
-          children:[
+          children: [
             {
               title: "Node一子节点",
               value: "1-0-1",
@@ -94,15 +96,15 @@ export default class BpmnExample extends Component {
               title: "Node-四子节点",
               value: "1-0-4",
             },
-          ]
+          ],
         },
       ],
-      id:null,
-      Xposition:null,
-      Yposition:null,
-      type:null,
-      content:"",
-      newState:[]
+      id: null,
+      Xposition: null,
+      Yposition: null,
+      type: null,
+      content: "",
+      newState: [],
     };
   }
   componentDidMount() {
@@ -112,6 +114,8 @@ export default class BpmnExample extends Component {
     LogicFlow.use(Control);
     LogicFlow.use(Menu);
     LogicFlow.use(SelectionSelect);
+    LogicFlow.use(BpmnAdapter);
+    LogicFlow.use(MiniMap)
     const lf = new LogicFlow({
       ...config,
       container: document.querySelector("#graph"),
@@ -119,7 +123,7 @@ export default class BpmnExample extends Component {
     this.lf = lf;
     lf.setDefaultEdgeType("bpmn:sequenceFlow");
     //lf.render()
-
+    lf.extension.miniMap(0,0)
     lf.setTheme({
       outline: {
         fill: "transparent",
@@ -139,7 +143,7 @@ export default class BpmnExample extends Component {
       },
     });
     lf.register(customEdge);
-
+    
     lf.setDefaultEdgeType("custom-edge");
     this.setState({
       rendered: true,
@@ -148,42 +152,53 @@ export default class BpmnExample extends Component {
   }
   componentDidUpdate() {
     this.lf.on("node:dnd-add", (data) => {
-      this.setState({
-        id:data.data.id,
-        type:data.data.type,
-        Xposition:data.data.x,
-        Yposition:data.data.y,
-        content:data.data.text?.value?data.data.text.value:"当前无文字内容"
-      },()=>{
-        this.lf.off("node:dnd-add",(args)=>{
-          console.log("11"+data);
-         })
-      })
+      this.setState(
+        {
+          id: data.data.id,
+          type: data.data.type,
+          Xposition: data.data.x,
+          Yposition: data.data.y,
+          content: data.data.text?.value
+            ? data.data.text.value
+            : "当前无文字内容",
+        },
+        () => {
+          this.lf.off("node:dnd-add", (args) => {
+            console.log("11" + data);
+          });
+        }
+      );
     });
-      this.lf.on("node:click", (data) => {
-       const {id,type,x,y}=data.data
-        this.setState({
-        id,
-        type,
-        Xposition:x,
-        Yposition:y,
-        content:data.data.text?.value?data.data.text.value:"当前无文字内容"
-      },()=>{
-        this.lf.off("node:click",(data)=>{
-          console.log(data);
-        })
-      })
+    this.lf.on("node:click", (data) => {
+      const { id, type, x, y } = data.data;
+      console.log(data);
+      this.setState(
+        {
+          id,
+          type,
+          Xposition: x,
+          Yposition: y,
+          content: data.data.text?.value
+            ? data.data.text.value
+            : "当前无文字内容",
+        },
+        () => {
+          this.lf.off("node:click", (data) => {
+            console.log(data);
+          });
+        }
+      );
     });
   }
-  componentWillUnmount(){
-    this.lf.off("node:click",(data)=>{
+  componentWillUnmount() {
+    this.lf.off("node:click", (data) => {
       console.log(data);
-    })
-     this.lf.off("node:dnd-add",(data)=>{
+    });
+    this.lf.off("node:dnd-add", (data) => {
       console.log(data);
-     })
+    });
   }
- 
+
   onChange = (val) => {
     console.log(val);
   };
@@ -223,12 +238,43 @@ export default class BpmnExample extends Component {
             {tools}
           </div>
           <div className="rightInfo">
-            <Card title="对应流程详情" bordered={false} style={{ width: 300,height:"800px" }}>
-            <div><span>Id:</span> <Input placeholder="该流程id" value={this.state.id}></Input></div>
-               <div><span>X轴:</span> <Input placeholder="当前X轴位置" value={this.state.Xposition}></Input></div>
-               <div><span>Y轴:</span> <Input placeholder="当前Y轴位置" value={this.state.Yposition}></Input></div>
-               <div><span>类型:</span> <Input placeholder="当前流程类型" value={this.state.type}></Input></div>
-               <div><span>文字内容:</span> <Input placeholder="当前文字内容" value={this.state.content}></Input></div>
+            <Card
+              title="对应流程详情"
+              bordered={false}
+              style={{ width: 300, height: "800px" }}
+            >
+              <div>
+                <span>Id:</span>{" "}
+                <Input placeholder="该流程id" value={this.state.id}></Input>
+              </div>
+              <div>
+                <span>X轴:</span>{" "}
+                <Input
+                  placeholder="当前X轴位置"
+                  value={this.state.Xposition}
+                ></Input>
+              </div>
+              <div>
+                <span>Y轴:</span>{" "}
+                <Input
+                  placeholder="当前Y轴位置"
+                  value={this.state.Yposition}
+                ></Input>
+              </div>
+              <div>
+                <span>类型:</span>{" "}
+                <Input
+                  placeholder="当前流程类型"
+                  value={this.state.type}
+                ></Input>
+              </div>
+              <div>
+                <span>文字内容:</span>{" "}
+                <Input
+                  placeholder="当前文字内容"
+                  value={this.state.content}
+                ></Input>
+              </div>
             </Card>
           </div>
         </LogicFlowWrapper>

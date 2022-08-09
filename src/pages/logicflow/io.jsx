@@ -23,7 +23,8 @@ export default function BpmnIo(props) {
   const { lf } = props;
   function downloadXml() {
     const data = lf.getGraphData();
-    download('logic-flow.xml', data);
+    console.log(data);
+    download('logic-flow11.xml', data);
   }
   function uploadXml(ev) {
     const file = (ev.target).files[0];
