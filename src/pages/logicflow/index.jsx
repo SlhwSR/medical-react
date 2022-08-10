@@ -114,7 +114,7 @@ export default class BpmnExample extends Component {
     LogicFlow.use(Control);
     LogicFlow.use(Menu);
     LogicFlow.use(SelectionSelect);
-    LogicFlow.use(BpmnAdapter);
+    // LogicFlow.use(BpmnAdapter);
     LogicFlow.use(MiniMap)
     const lf = new LogicFlow({
       ...config,
