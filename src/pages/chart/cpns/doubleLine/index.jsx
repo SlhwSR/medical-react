@@ -36,7 +36,7 @@ const DemoDualAxes = () => {
     },
     {
       year: '1997',
-      value: 7,
+      value: 7,                                                                                                                                                                                                                             
       count: 7,
     },
     {

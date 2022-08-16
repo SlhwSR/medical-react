@@ -59,7 +59,7 @@ const DemoRose = () => {
           fillOpacity: 0.65,
         },
       },
-    },
+    },  
   };
   return <Rose {...config} />;
 };

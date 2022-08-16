@@ -10,5 +10,9 @@ export default defineConfig({
       '@components':resolve(__dirname,'./src/components')
     }
   },
+  server:{
+     host:'0.0.0.0'
+  },
+  base:"./",
   plugins: [react(),basicSsl()]
 })

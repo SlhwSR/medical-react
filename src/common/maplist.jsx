@@ -45,7 +45,7 @@ export const ColumnList=[{
     label:"模型图"
   }
  ]
- export const navheaer=[{
+export const navheaer=[{
   key:"kinds",
   label:"首页",
 },{

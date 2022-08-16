@@ -4,7 +4,7 @@ import LogicFlow from '@logicflow/core';
 import downloadImg from './cpns/img/download.png'
 import photo from './cpns/img/img.png'
 import uploadImg from './cpns/img/upload.png'
-
+import {lfJson2Xml,lfXml2Json} from '@logicflow/extension'
 function download(filename, text) {
   var element = document.createElement('a');
   element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
@@ -30,11 +30,12 @@ export default function BpmnIo(props) {
 }
   function uploadXml(ev) {
     const file = (ev.target).files[0];
-    console.log(file);
+    //console.log(file);
     const reader = new FileReader()
     reader.onload = (event) => {
       if (event.target) {
         const xml = event.target.result;
+        console.log(lfXml2Json(xml));
         lf.render(xml);
       }
     }

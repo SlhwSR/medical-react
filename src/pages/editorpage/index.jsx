@@ -9,4 +9,4 @@ const EditorPage = memo(() => {
   )
 })
 
-export default EditorPage
+export default EditorPage 

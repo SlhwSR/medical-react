@@ -51,6 +51,7 @@ export default class BpmnExample extends Component {
         {
           title: "流程节点一",
           value: "0-0",
+          disabled:true,
           children: [
             {
               title: "流程节点一子节点",
@@ -148,6 +149,20 @@ export default class BpmnExample extends Component {
       rendered: true,
     });
     lf.render();
+    
+  }
+ uploadXml=(ev)=> {
+    const file = (ev.target).files[0];
+    //console.log(file);
+    const reader = new FileReader()
+    reader.onload = (event) => {
+      if (event.target) {
+        console.log(event.target);
+        const xml = event.target.result;
+        lf.render(xml);
+      }
+    }
+    reader.readAsText(file); // you could also read images and other binaries
   }
   componentDidUpdate() {
     this.lf.on("node:dnd-add", (data) => {

@@ -135,7 +135,7 @@ const Kinds = memo(() => {
   ];
   return (
     <div>Just A redux demo{name}
-    <Button onClick={()=>showModal()} className="scroll-ml-32 scroll-m-80" style={{marginLeft:"1300px"}}>添加一条</Button>
+    <Button type="primary" onClick={()=>showModal()} className="scroll-ml-32 scroll-m-80" style={{marginLeft:"1300px"}}>添加一条</Button>
     <TableWrapper>
       <Table dataSource={goodlist} columns={columns}>
       </Table>
