@@ -2,7 +2,6 @@ import {
     createSlice,
     createAsyncThunk
 } from '@reduxjs/toolkit'
-
  const medicalfactory=createSlice({
     name:"medicalGoods",
     initialState:{

@@ -1,6 +1,6 @@
 import { Breadcrumb, Layout, Menu, Switch } from "antd";
 
-import { useState, createElement, Suspense, memo } from "react";
+import { useState, createElement, Suspense, memo, useEffect } from "react";
 import { QqOutlined } from "@ant-design/icons";
 import { NavLink, useHref, useNavigate, useRoutes } from "react-router-dom";
 import routes from "../../router";
@@ -17,6 +17,8 @@ const Index = memo((props) => {
     navigator(`/${key}`);
     setbread(key);
   };
+  useEffect(()=>{
+  },[])
   const switchtab = (item, key, value) => {
     navigator(`/${key}`);
     setbread(key);

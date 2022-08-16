@@ -1165,6 +1165,18 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@plugin-web-update-notification/core@0.4.2":
+  version "0.4.2"
+  resolved "https://registry.npmmirror.com/@plugin-web-update-notification/core/-/core-0.4.2.tgz#8d2e1c30081785eec0e3b22736caccdbca3093e0"
+  integrity sha512-mrPtXUyOSJKfhjX2Sj23I3Qb9N3/r+3WIeodXmP1qU3XbXChbPa+jsU0mmIbYJbgK6Bb+gJhkSQHstzQmqv1tQ==
+
+"@plugin-web-update-notification/vite@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.npmmirror.com/@plugin-web-update-notification/vite/-/vite-0.4.2.tgz#a11bb26b415463d57057a253ac6e952ae2437afc"
+  integrity sha512-H/A/3zpqeNmlRVz38XAGuTrR/uBMaSo8i3S1BqMP+AHl4vGZGsCsz94hV+R5DXDCcpmYdw9EC0PKB7U3sd3qVg==
+  dependencies:
+    "@plugin-web-update-notification/core" "0.4.2"
+
 "@probe.gl/env@3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@probe.gl/env/-/env-3.5.0.tgz#c6d8fbf414fda3eba7b3813cc274e76245216fe0"

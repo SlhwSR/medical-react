@@ -6,7 +6,6 @@ const BedNo = memo(() => {
   const location=useLocation()
   useEffect(()=>{
     navigate(`/kinds`,{state:{age:"111",his:"44"},replace:true},)
-    console.log(location);
   },[])
   const [name,setname]=useState("<Redux toolkit>")
   return (
