@@ -75,7 +75,7 @@ const DemoChart = memo(() => {
           <DemoDualAxes></DemoDualAxes>
           {/* <LadderDemo></LadderDemo> */}
           <DoubleLineAndSquare></DoubleLineAndSquare>
-          {/* <div className= "w-1/3"><DemoDualAxes></DemoDualAxes></div> */}
+          {/* <div className= "w-1/3"><DemoDualAxes></DemoDualAxes></div> */}  
         </div>
       </Card>
     </div>
