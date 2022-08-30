@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import LogicFlow from '@logicflow/core';
+import { Image } from 'antd';
 
 
 
@@ -32,6 +33,11 @@ export default function BpmnPattern(props) {
       text: '结束'
     });
   }
+  function addPersonalNode(){
+    lf.dnd.startDrag({
+      type:"PersonalNode"
+    })
+  }
   function openSelection() {
     lf.updateEditConfig({
       stopMoveGraph: true,
@@ -54,6 +60,8 @@ export default function BpmnPattern(props) {
       <div>执行事件 </div>
       <div className="pattern-condition" onMouseDown={() => addGateWay()}></div>
       <div>条件判断</div>
+      {/* <div className="pattern-personal" onMouseDown={() => addPersonalNode()}></div>
+      <div>自定义组件</div> */}
       <div className="pattern-end" onMouseDown={() => addEndNode()}></div>
       <div>结束</div> 
     </div>

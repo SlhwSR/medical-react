@@ -19,6 +19,7 @@ import { toLogicflowData } from "./cpns/adpterForTurbo";
 import customEdge from "./customEdge";
 import { LogicFlowWrapper } from "./style";
 import { TreeSelect, Card, Input } from "antd";
+import PersonalNode from './personalNode'
 const { TreeNode } = TreeSelect;
 const config = {
   stopScrollGraph: true,
@@ -110,7 +111,7 @@ export default class BpmnExample extends Component {
   }
   componentDidMount() {
     LogicFlow.use(BpmnElement);
-    LogicFlow.use(BpmnXmlAdapter);
+   LogicFlow.use(BpmnXmlAdapter);
     LogicFlow.use(Snapshot);
     LogicFlow.use(Control);
     LogicFlow.use(Menu);
@@ -121,6 +122,8 @@ export default class BpmnExample extends Component {
       ...config,
       container: document.querySelector("#graph"),
     });
+    lf.register(PersonalNode)
+    lf.register(customEdge);
     this.lf = lf;
     lf.setDefaultEdgeType("bpmn:sequenceFlow");
     //lf.render()
@@ -142,7 +145,7 @@ export default class BpmnExample extends Component {
         },
       },
     });
-    lf.register(customEdge);
+    
     
     lf.setDefaultEdgeType("custom-edge");
     this.setState({
@@ -153,12 +156,11 @@ export default class BpmnExample extends Component {
   }
  uploadXml=(ev)=> {
     const file = (ev.target).files[0];
-    //console.log(file);
     const reader = new FileReader()
     reader.onload = (event) => {
       if (event.target) {
-        console.log(event.target);
         const xml = event.target.result;
+        console.log(xml);
         lf.render(xml);
       }
     }
@@ -183,8 +185,11 @@ export default class BpmnExample extends Component {
         }
       );
     });
-    this.lf.on("node:click", (data) => {
+    this.lf.on("node:click",  (data) => {
       const { id, type, x, y } = data.data;
+      // data.data.properties.func=[1,2,3]
+      // this.lf.setProperties(id ,{ok:"111",ko:"222",cc:"1111111"})
+      console.log(this.lf.getProperties(id));
       console.log(data);
       this.setState(
         {
@@ -203,14 +208,15 @@ export default class BpmnExample extends Component {
         }
       );
     });
+
   }
   componentWillUnmount() {
-    this.lf.off("node:click", (data) => {
-      console.log(data);
-    });
-    this.lf.off("node:dnd-add", (data) => {
-      console.log(data);
-    });
+    // this.lf.off("node:click", (data) => {
+    //   console.log(data);
+    // });
+    // this.lf.off("node:dnd-add", (data) => {
+    //   console.log(data);
+    // });
   }
 
   onChange = (val) => {

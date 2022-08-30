@@ -23,8 +23,6 @@ export default function BpmnIo(props) {
   const { lf } = props;
   function downloadXml() {
     const data = lf.getGraphData();
-    //console.log(data);
- //   download('logic-flow11.xml',JSON.stringify(data));
     download('logic-flow11.xml',data);
    
 }
@@ -35,8 +33,10 @@ export default function BpmnIo(props) {
     reader.onload = (event) => {
       if (event.target) {
         const xml = event.target.result;
+        // console.log(lfXml2Json(xml));
+        //console.log(xml);
         console.log(lfXml2Json(xml));
-        lf.render(xml);
+        lf.render(lfJson2Xml(lfXml2Json(xml)));
       }
     }
     reader.readAsText(file); // you could also read images and other binaries
